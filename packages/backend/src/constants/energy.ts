@@ -1,0 +1,7 @@
+export const KWH_PRICE_2025 = 0.231;
+
+export const KWH_PRICE_INCREASE_PER_YEAR = 0.05;
+
+export const SYSTEM_EFFICIENCY = 0.8;
+
+export const IDEAL_SOLAR_YEARLY_PRODUCTION_RATIO = 0.85;

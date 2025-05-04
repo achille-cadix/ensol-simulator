@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "name": "👑 Root",
+      "path": ".",
+    },
+    {
+      "path": "packages/backend",
+      "name": "🗄️ Backend",
+    },
+    {
+      "path": "packages/frontend",
+      "name": "🖥️ Frontend",
+    },
+    {
+      "path": "packages/shared",
+      "name": "🤝 Shared",
+    },
+    {
+      "path": "packages/types",
+      "name": "🔗 Types",
+    },
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.enable": true,
+    "eslint.validate": ["typescript", "javascript", "tsx"],
+    "git.enabled": true,
+  },
+}

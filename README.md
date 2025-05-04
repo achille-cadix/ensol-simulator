@@ -28,6 +28,8 @@ cd ./packages/frontend
 yarn dev
 ```
 
+You also have to add environment variables by duplicating .env.example and renaming it ".env", and adding the required API Keys
+
 ## Backend
 
 You should be able to run backend on http://localhost:8000 by running:

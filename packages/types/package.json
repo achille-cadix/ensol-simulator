@@ -4,5 +4,9 @@
   "private": true,
   "devDependencies": {
     "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "@ensol-test/shared": "workspace:*",
+    "zod": "^3.24.3"
   }
 }
