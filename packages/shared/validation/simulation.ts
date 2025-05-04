@@ -18,4 +18,3 @@ export const simulationResponseSchema = z.object({
     estimatedAnnualEnergyProduction: z.coerce.number().int().min(0),
     yearlySavings: z.coerce.number().int().min(0),
 });
-
