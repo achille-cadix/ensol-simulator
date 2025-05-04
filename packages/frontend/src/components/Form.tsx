@@ -8,7 +8,6 @@ import {
   Group,
   NumberInput,
   Text,
-  rem,
   Select,
   Alert,
 } from '@mantine/core';
@@ -94,15 +93,15 @@ export const Form = ({ onSubmit }: Props) => {
   };
 
   return (
-    <Card withBorder h="100%">
+    <Card withBorder className="h-full">
       <form onSubmit={form.onSubmit(handleSubmit)}>
-        <Stack gap="md">
-          <Text fw={700} fz="xl">
+        <Stack className="gap-4">
+          <Text className="font-bold text-2xl">
             Simulateur
           </Text>
           <LocationForm form={form} />
-          <Group align="end" gap="sm">
-            <Text w={250}>Inclinaison du toit:</Text>
+          <Group className="items-end gap-2">
+            <Text className="w-[250px]">Inclinaison du toit:</Text>
             <Select
               required
               placeholder="Inclinaison de votre toit"
@@ -110,12 +109,12 @@ export const Form = ({ onSubmit }: Props) => {
                 value,
                 label: `${value}°`,
               }))}
-              w={300}
+              className="w-[300px]"
               {...form.getInputProps('inclination')}
             />
           </Group>
-          <Group align="end" gap="sm">
-            <Text w={250}>Orientation du toit :</Text>
+          <Group className="items-end gap-2">
+            <Text className="w-[250px]">Orientation du toit :</Text>
             <Select
               required
               placeholder="Orientation de votre toit"
@@ -123,18 +122,18 @@ export const Form = ({ onSubmit }: Props) => {
                 value,
                 label: translateOrientation[value],
               }))}
-              w={300}
+              className="w-[300px]"
               {...form.getInputProps('orientation')}
             />
           </Group>
-          <Group align="end" gap="sm">
-            <Text w={250}>Facture mensuelle d'électricité:</Text>
+          <Group className="items-end gap-2">
+            <Text className="w-[250px]">Facture mensuelle d'électricité:</Text>
             <NumberInput
               required
               placeholder="Montant"
               {...form.getInputProps('monthlyBill')}
               rightSection={<Text>€</Text>}
-              w={119}
+              className="w-[119px]"
               min={0}
             />
           </Group>
@@ -144,11 +143,8 @@ export const Form = ({ onSubmit }: Props) => {
             </Alert>
           )}
           <Button
-            mt="md"
-            size="lg"
-            fullWidth
+            className="mt-4 w-full text-lg"
             type="submit"
-            style={{ fontSize: rem(22), height: rem(60) }}
           >
             Lancer la simulation
           </Button>

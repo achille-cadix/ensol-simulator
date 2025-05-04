@@ -39,8 +39,8 @@ class PvgisApiClient {
                 throw new ExternalApiError(EXTERNAL_SERVICE_NAME.PVGIS, error.response?.data.message, error.response?.data.details);
             } else {
                 console.error('Unexpected error during PVGIS API request', error);
+                throw new Error('Failed to fetch irradiance data from PVGIS API');
             }
-            throw new Error('Failed to fetch irradiance data from PVGIS API ');
         }
     }
 }

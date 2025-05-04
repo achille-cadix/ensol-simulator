@@ -10,36 +10,38 @@ type Props = {
 };
 
 export const LocationForm = ({ form }: Props) => {
-  const [useCoordinates, setUseCoordinates] = useState(false);
+  const [useGpsCoordinates, setUseGpsCoordinates] = useState(false);
   const MapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
     <>
-      <Group align="end" gap="6px">
+      <Group className="items-end gap-[6px]">
         <Stack>
           <LoadScript
             googleMapsApiKey={MapsApiKey || ''}
             libraries={['places', 'geometry']}
           >
-            <Text w={250}>Adresse:</Text>
-            {!useCoordinates && MapsApiKey ? (
+            <Text className="w-[250px]">Adresse:</Text>
+            {!useGpsCoordinates && MapsApiKey ? (
               <AddressFinder form={form} />
             ) : (
               <Group>
                 <NumberInput
                   required
+                  withAsterisk={false}
                   placeholder="Latitude"
                   label="Latitude"
                   hideControls
-                  w={119}
+                  className="w-[125px]"
                   {...form.getInputProps('latitude')}
                 />
                 <NumberInput
                   required
+                  withAsterisk={false}
                   placeholder="Longitude"
                   label="Longitude"
                   hideControls
-                  w={119}
+                  className="w-[125px]"
                   {...form.getInputProps('longitude')}
                 />
               </Group>
@@ -49,14 +51,12 @@ export const LocationForm = ({ form }: Props) => {
       </Group>
       {MapsApiKey && (
         <Button
-          mt="md"
-          size="xs"
+          className="mt-4 text-xs w-[240px]"
           variant="default"
-          w={240}
-          onClick={() => setUseCoordinates(!useCoordinates)}
+          onClick={() => setUseGpsCoordinates(!useGpsCoordinates)}
         >
           Utiliser{' '}
-          {useCoordinates ? 'une adresse postale' : 'des coordonnées GPS'}
+          {useGpsCoordinates ? 'une adresse postale' : 'des coordonnées GPS'}
         </Button>
       )}
     </>

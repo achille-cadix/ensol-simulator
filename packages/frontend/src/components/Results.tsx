@@ -12,19 +12,19 @@ export const Results = ({ results }: Props) => {
         {results ? (
           <>
             <Group>
-              <Text fw={700} fz="l">
+              <Text className="font-bold text-lg">
                 Nombre de panneaux solaires recommandés :
               </Text>
               <Text>{results?.numberOfSolarPanels} panneaux</Text>
             </Group>
             <Group>
-              <Text fw={700} fz="l">
+              <Text className="font-bold text-lg">
                 Energie annuelle produite :
               </Text>
               <Text>{results?.estimatedAnnualEnergyProduction} kWh</Text>
             </Group>
             <Group>
-              <Text fw={700} fz="l">
+              <Text className="font-bold text-lg">
                 Économies annuelles estimées :
               </Text>
               <Text>{results?.yearlySavings} €</Text>

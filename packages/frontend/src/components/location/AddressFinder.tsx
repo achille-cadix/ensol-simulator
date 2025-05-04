@@ -89,7 +89,7 @@ export const AddressFinder = ({ form }: Props) => {
           <TextInput
             required
             placeholder="Adresse"
-            w={300}
+            className="w-[300px]"
             {...form.getInputProps('address')}
             onChange={(e) => {
               setSearchQuery(e.target.value);
